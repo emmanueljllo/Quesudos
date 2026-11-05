@@ -13,6 +13,7 @@ var BUSINESS_INFO = {
   address: "Avenida 47B #61-171, Bello, Antioquia",
   city: "Bello, Antioquia, Colombia",
   whatsapp: "324 296 9587",
+  whatsappNumber: "573242969587",
   whatsappLink: "https://wa.link/5mk8oe",
   instagram: "@quesudos.moncho",
   instagramLink: "https://www.instagram.com/quesudos.moncho/",

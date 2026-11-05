@@ -4,7 +4,7 @@ Página web profesional para **Quesudos Moncho**, un negocio de comidas rápidas
 
 ## Descripción
 
-Sitio web responsivo que presenta el catálogo de productos y precios, galería, ubicación y acceso directo a pedidos por WhatsApp.
+Sitio web responsivo que presenta el catálogo de productos y precios, galería y ubicación. Los clientes pueden armar un carrito, ajustar cantidades y enviar el resumen del pedido por WhatsApp para confirmar disponibilidad, domicilio y medios de pago.
 
 ## Estructura del proyecto
 
@@ -15,6 +15,8 @@ js/data.js        Datos del negocio, menú y productos
 js/main.js        Interacciones del sitio
 img/              Imágenes proporcionadas por el negocio
 ```
+
+El carrito funciona en la sesión actual del navegador. Antes de enviar el pedido por WhatsApp, el cliente ingresa su nombre, teléfono, modalidad de entrega, dirección cuando solicita domicilio, forma de pago y notas opcionales. La transferencia, la cobertura y el costo del domicilio se confirman directamente con el negocio. El sitio no procesa pagos ni registra pedidos en un servidor.
 
 ## Imágenes
 
@@ -31,6 +33,7 @@ La portada, la sección Nosotros y la galería usan la foto real `Haburguesa.jpg
 ## Contacto
 
 - WhatsApp: 324 296 9587
+- Horario informado: 5:00 p. m. a 11:00 p. m.
 - Instagram: [@quesudos.moncho](https://www.instagram.com/quesudos.moncho/)
 - Dirección: Avenida 47B #61-171, Bello, Antioquia
 

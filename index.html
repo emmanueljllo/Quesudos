@@ -48,6 +48,16 @@
         </a>
       </nav>
 
+      <button class="cart-toggle" id="cart-toggle" type="button" aria-label="Abrir carrito, 0 productos" aria-controls="cart-drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L22 7H6"></path>
+          <circle cx="10" cy="21" r="1"></circle>
+          <circle cx="18" cy="21" r="1"></circle>
+        </svg>
+        <span>Mi pedido</span>
+        <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+      </button>
+
       <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menú de navegación" aria-controls="nav-menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -55,6 +65,59 @@
       </button>
     </div>
   </header>
+
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" hidden>
+    <div class="cart-drawer-header">
+      <div>
+        <p class="cart-eyebrow">QUESUDOS MONCHO</p>
+        <h2 id="cart-title">Tu pedido</h2>
+      </div>
+      <button class="cart-close" id="cart-close" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+    <p class="cart-note">Revisa tus productos antes de enviarlos por WhatsApp.</p>
+    <div class="cart-items" id="cart-items"></div>
+    <p class="cart-empty" id="cart-empty">Aún no agregas productos. ¡Explora nuestro menú!</p>
+    <div class="cart-summary">
+      <div class="cart-total-row">
+        <span>Total de productos</span>
+        <strong id="cart-total">$0</strong>
+      </div>
+      <form class="checkout-form" id="checkout-form">
+        <h3>Datos para tu pedido</h3>
+        <label for="customer-name">Nombre</label>
+        <input id="customer-name" name="customerName" type="text" autocomplete="name" maxlength="80" required>
+
+        <label for="customer-phone">Teléfono de contacto</label>
+        <input id="customer-phone" name="customerPhone" type="tel" autocomplete="tel" inputmode="tel" pattern="[+]?[0-9][0-9 ]{5,18}[0-9]" title="Ingresa un número de teléfono válido." required>
+
+        <label for="delivery-method">¿Cómo recibes tu pedido?</label>
+        <select id="delivery-method" name="deliveryMethod" required>
+          <option value="domicilio">Domicilio</option>
+          <option value="recoger">Recoger en el local</option>
+        </select>
+
+        <div class="checkout-address-field" id="checkout-address-field">
+          <label for="customer-address">Dirección del domicilio</label>
+          <input id="customer-address" name="customerAddress" type="text" autocomplete="street-address" maxlength="160" required>
+        </div>
+
+        <label for="payment-method">¿Cómo quieres pagar?</label>
+        <select id="payment-method" name="paymentMethod" required>
+          <option value="Efectivo al recibir o recoger">Efectivo</option>
+          <option value="Transferencia (solicitar datos al negocio)">Transferencia</option>
+        </select>
+
+        <label for="order-notes">Notas para tu pedido <span>(opcional)</span></label>
+        <textarea id="order-notes" name="orderNotes" rows="2" maxlength="300" placeholder="Indicaciones o detalles adicionales"></textarea>
+
+        <p class="cart-disclaimer">El costo del domicilio, la cobertura y los datos para transferencia se confirman por WhatsApp.</p>
+        <button class="btn btn-whatsapp cart-checkout" id="cart-checkout" type="submit" disabled>
+          Enviar pedido por WhatsApp
+        </button>
+      </form>
+    </div>
+  </aside>
 
   <!-- ======== HERO SECTION ======== -->
   <section class="hero" id="inicio">
@@ -193,6 +256,14 @@
 
       <div class="location-grid">
         <div class="location-info fade-in-left">
+          <div class="location-card">
+            <div class="location-card-icon">🕒</div>
+            <div>
+              <h3>Horario de atención</h3>
+              <p>5:00 p. m. a 11:00 p. m.</p>
+            </div>
+          </div>
+
           <div class="location-card">
             <div class="location-card-icon">📍</div>
             <div>
@@ -359,7 +430,7 @@
   </a>
 
   <!-- ======== SCROLL TO TOP ======== -->
-  <button class="scroll-top" aria-label="Volver arriba">↑</button>
+  <button class="scroll-top" type="button" aria-label="Volver arriba">↑</button>
 
   <!-- ======== LIGHTBOX ======== -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen de la galería" aria-hidden="true">
