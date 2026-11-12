@@ -10,14 +10,14 @@
 var BUSINESS_INFO = {
   name: "Quesudos Moncho",
   slogan: "Los mejores sabores de las comidas rapidas en Bello",
-  address: "Avenida 47B #61-171, Bello, Antioquia",
+  address: "Diagonal 65 #40-05, Bello, Antioquia",
   city: "Bello, Antioquia, Colombia",
-  whatsapp: "324 296 9587",
-  whatsappNumber: "573242969587",
-  whatsappLink: "https://wa.link/5mk8oe",
+  whatsapp: "313 541 3017",
+  whatsappNumber: "573135413017",
+  whatsappLink: "https://wa.me/573135413017",
   instagram: "@quesudos.moncho",
   instagramLink: "https://www.instagram.com/quesudos.moncho/",
-  mapsQuery: "Avenida+47B+%2361-171,+Bello,+Antioquia,+Colombia",
+  mapsQuery: "Diagonal+65+%2340-05,+Bello,+Antioquia,+Colombia",
 };
 
 var MENU_DATA = [
@@ -88,7 +88,7 @@ var MENU_DATA = [
       {
         name: "Perra grande",
         price: 16500,
-        image: "https://images.unsplash.com/photo-1776260486226-11dabfacf5f2?w=500&h=400&fit=crop",
+        image: "img/Perra-grande.png",
         description: "Con tocineta, queso, ensalada, ripio, cebolla y salsas al gusto",
       },
       {
@@ -108,13 +108,19 @@ var MENU_DATA = [
       {
         name: "Salchipapas",
         price: 10500,
-        image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=500&h=400&fit=crop",
+        image: "img/Salchipapa-sencilla.png",
         description: "",
       },
       {
         name: "Salchipapas especial (con queso y tocineta)",
         price: 18000,
-        image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&h=400&fit=crop",
+        image: "img/Salchipapa-especial.png",
+        description: "",
+      },
+      {
+        name: "Salchipapa desmechada",
+        price: 22000,
+        image: "img/Salchipapa-desmechada.png",
         description: "",
       },
       {
@@ -126,7 +132,7 @@ var MENU_DATA = [
       {
         name: "Chuzo de cerdo",
         price: 19500,
-        image: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=500&h=400&fit=crop",
+        image: "img/Chuzo-cerdo.png",
         description: "",
       },
     ],
@@ -179,16 +185,24 @@ var GALLERY_IMAGES = [
     alt: "Perro caliente con queso",
   },
   {
-    src: "https://images.unsplash.com/photo-1776260486226-11dabfacf5f2?w=600&h=500&fit=crop",
-    alt: "Perra con tocineta y queso",
+    src: "img/Perra-grande.png",
+    alt: "Perra grande con tocineta y queso",
   },
   {
-    src: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600&h=500&fit=crop",
-    alt: "Salchipapas con salsas",
+    src: "img/Salchipapa-especial.png",
+    alt: "Salchipapa especial con queso y tocineta",
   },
   {
-    src: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=500&fit=crop",
-    alt: "Chuzos a la parrilla",
+    src: "img/Salchipapa-desmechada.png",
+    alt: "Salchipapa desmechada",
+  },
+  {
+    src: "img/Salchipapa-sencilla.png",
+    alt: "Salchipapa sencilla con salsas",
+  },
+  {
+    src: "img/Chuzo-cerdo.png",
+    alt: "Chuzo de cerdo",
   },
 ];
 

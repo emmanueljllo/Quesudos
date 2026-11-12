@@ -32,10 +32,10 @@ La portada, la sección Nosotros y la galería usan la foto real `Haburguesa.jpg
 
 ## Contacto
 
-- WhatsApp: 324 296 9587
+- WhatsApp: 313 541 3017
 - Horario informado: 5:00 p. m. a 11:00 p. m.
 - Instagram: [@quesudos.moncho](https://www.instagram.com/quesudos.moncho/)
-- Dirección: Avenida 47B #61-171, Bello, Antioquia
+- Dirección: Diagonal 65 #40-05, Bello, Antioquia
 
 ## Modificar productos y precios
 
