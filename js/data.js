@@ -20,6 +20,24 @@ var BUSINESS_INFO = {
   mapsQuery: "Diagonal+65+%2340-05,+Bello,+Antioquia,+Colombia",
 };
 
+var MENU_SETTINGS = {
+  // Paste the URL of a published Google Sheets CSV to enable live menu updates.
+  feedUrl: "",
+  freeDeliveryThreshold: 40000,
+};
+
+var PRODUCT_SUGGESTIONS = {
+  "Hamburguesa sencilla": ["Papas", "Salchipapas"],
+  "Hamburguesa especial (queso y tocineta)": ["Papas", "Salchipapas especial (con queso y tocineta)"],
+  "Hamburguesa súper (doble todo)": ["Papas", "Salchipapa desmechada"],
+};
+
+var PRODUCT_MODIFIERS = {
+  "Queso extra": 4500,
+  "Tocineta extra": 3000,
+  "Huevo": 2000,
+};
+
 var MENU_DATA = [
   {
     id: "hamburguesas",
@@ -32,18 +50,33 @@ var MENU_DATA = [
         price: 12000,
         image: "img/Haburguesa.jpg",
         description: "Ensalada, ripio, cebolla y salsas al gusto",
+        modifiers: [
+          { name: "Queso extra", price: 4500 },
+          { name: "Tocineta extra", price: 3000 },
+          { name: "Huevo", price: 2000 },
+        ],
       },
       {
         name: "Hamburguesa especial (queso y tocineta)",
         price: 16000,
         image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&h=400&fit=crop",
         description: "Ensalada, ripio, cebolla y salsas al gusto",
+        modifiers: [
+          { name: "Queso extra", price: 4500 },
+          { name: "Tocineta extra", price: 3000 },
+          { name: "Huevo", price: 2000 },
+        ],
       },
       {
         name: "Hamburguesa súper (doble todo)",
         price: 19500,
         image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=500&h=400&fit=crop",
         description: "Ensalada, ripio, cebolla y salsas al gusto",
+        modifiers: [
+          { name: "Queso extra", price: 4500 },
+          { name: "Tocineta extra", price: 3000 },
+          { name: "Huevo", price: 2000 },
+        ],
       },
     ],
   },
@@ -165,6 +198,12 @@ var MENU_DATA = [
         name: "Tocineta",
         price: 3000,
         image: "https://images.unsplash.com/photo-1528607929212-2636ec44253e?w=500&h=400&fit=crop",
+        description: "",
+      },
+      {
+        name: "Huevo",
+        price: 2000,
+        image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&h=400&fit=crop",
         description: "",
       },
     ],

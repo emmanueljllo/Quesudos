@@ -19,7 +19,7 @@
   <link rel="icon" href="data:,">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="css/styles.css?v=20261112">
+  <link rel="stylesheet" href="css/styles.css?v=20261117-4">
 </head>
 <body>
 
@@ -76,9 +76,20 @@
       <button class="cart-close" id="cart-close" type="button" aria-label="Cerrar carrito">×</button>
     </div>
     <p class="cart-note">Revisa tus productos antes de enviarlos por WhatsApp.</p>
+    <button class="repeat-order" id="repeat-order" type="button" hidden>Repetir último pedido</button>
     <div class="cart-items" id="cart-items"></div>
+    <section class="cart-suggestions" id="cart-suggestions" aria-live="polite" hidden>
+      <h3>¿Le agregas algo más?</h3>
+      <div id="cart-suggestions-list"></div>
+    </section>
     <p class="cart-empty" id="cart-empty">Aún no agregas productos. ¡Explora nuestro menú!</p>
     <div class="cart-summary">
+      <div class="benefit-progress" id="benefit-progress" aria-live="polite">
+        <p id="benefit-message"></p>
+        <div class="benefit-progress-track" role="progressbar" aria-label="Progreso para domicilio gratis" aria-valuemin="0" aria-valuemax="100">
+          <span id="benefit-progress-bar"></span>
+        </div>
+      </div>
       <div class="cart-total-row">
         <span>Total de productos</span>
         <strong id="cart-total">$0</strong>
@@ -100,6 +111,8 @@
         <div class="checkout-address-field" id="checkout-address-field">
           <label for="customer-address">Dirección del domicilio</label>
           <input id="customer-address" name="customerAddress" type="text" autocomplete="street-address" maxlength="160" required>
+          <button class="location-button" id="use-location" type="button">Usar mi ubicación</button>
+          <p class="location-status" id="location-status" aria-live="polite"></p>
         </div>
 
         <label for="payment-method">¿Cómo quieres pagar?</label>
@@ -111,13 +124,45 @@
         <label for="order-notes">Notas para tu pedido <span>(opcional)</span></label>
         <textarea id="order-notes" name="orderNotes" rows="2" maxlength="300" placeholder="Indicaciones o detalles adicionales"></textarea>
 
-        <p class="cart-disclaimer">El costo del domicilio, la cobertura y los datos para transferencia se confirman por WhatsApp.</p>
+        <p class="cart-disclaimer">El beneficio de domicilio gratis depende de la cobertura. Confirma la disponibilidad y el costo del domicilio por WhatsApp.</p>
+        <p class="checkout-status" id="checkout-status" role="status" aria-live="polite"></p>
         <button class="btn btn-whatsapp cart-checkout" id="cart-checkout" type="submit" disabled>
           Enviar pedido por WhatsApp
         </button>
       </form>
     </div>
   </aside>
+  <button class="sticky-cart" id="sticky-cart" type="button" hidden>Ver pedido (0) · $0</button>
+  <div class="modifier-dialog" id="modifier-dialog" role="dialog" aria-modal="true" aria-labelledby="modifier-title" aria-hidden="true" hidden>
+    <form class="modifier-dialog-card" id="modifier-form">
+      <h2 id="modifier-title">Personaliza tu hamburguesa</h2>
+      <p>Elige las adiciones que quieras.</p>
+      <div class="modifier-options" id="modifier-options"></div>
+      <div class="modifier-dialog-actions">
+        <button class="modifier-cancel" id="modifier-cancel" type="button">Cancelar</button>
+        <button class="btn btn-whatsapp" type="submit">Agregar al pedido</button>
+      </div>
+    </form>
+  </div>
+  <div class="receipt-dialog" id="receipt-dialog" role="dialog" aria-modal="true" aria-labelledby="receipt-title" aria-hidden="true" hidden>
+    <section class="receipt-card">
+      <div class="receipt-header">
+        <div>
+          <p class="cart-eyebrow">QUESUDOS MONCHO</p>
+          <h2 id="receipt-title">Resumen del pedido</h2>
+        </div>
+        <button class="cart-close" id="receipt-close" type="button" aria-label="Cerrar recibo">×</button>
+      </div>
+      <p class="receipt-status">Pedido generado · Pendiente de confirmación por el negocio</p>
+      <div class="receipt-content" id="receipt-content"></div>
+      <p class="receipt-note">Este es un comprobante del pedido solicitado; no es factura ni confirma el pago o la aceptación del pedido.</p>
+      <div class="receipt-actions">
+        <a class="btn btn-whatsapp" id="receipt-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+        <button class="btn btn-whatsapp" id="receipt-print" type="button">Imprimir recibo / Guardar PDF</button>
+        <button class="modifier-cancel" id="receipt-done" type="button">Listo</button>
+      </div>
+    </section>
+  </div>
 
   <!-- ======== HERO SECTION ======== -->
   <section class="hero" id="inicio">
@@ -164,6 +209,7 @@
     <div class="container">
       <h2 class="section-title fade-in">NUESTRO <span>MENÚ</span></h2>
       <p class="section-subtitle fade-in">Descubre todos nuestros productos preparados con los mejores ingredientes. Todos los precios en pesos colombianos (COP).</p>
+      <p class="menu-status" id="menu-status" role="status" hidden></p>
 
       <!-- Category Filter Buttons -->
       <div class="menu-categories fade-in">
@@ -439,8 +485,8 @@
   </div>
 
   <!-- ======== SCRIPTS ======== -->
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/data.js?v=20261117-4"></script>
+  <script src="js/main.js?v=20261117-4"></script>
 
   <!-- Structured Data for SEO -->
   <script type="application/ld+json">
